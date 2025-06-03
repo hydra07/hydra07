@@ -1,0 +1,79 @@
+name: Update Stats
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Chạy mỗi 6 giờ
+  workflow_dispatch:  # Cho phép chạy thủ công
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install -g @octokit/rest
+          npm install -g @octokit/graphql
+          
+      - name: Update README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Tạo file tạm thời
+          cat > temp.md << 'EOL'
+          # Hi there 👋 I'm Huy
+
+          <div align="center">
+            <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=FF0000&center=true&vCenter=true&width=600&height=100&lines=Frontend+Developer;Backend+Developer;Full+Stack+Enthusiast" alt="Typing SVG" />
+          </div>
+
+          ## 🚀 About Me
+          - 🔭 Full-stack developer with a passion for creating efficient and scalable solutions
+          - 🎯 Focused on building robust web applications and APIs
+
+          ## 🛠️ Tech Stack
+
+          <div align="center">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hydra07&layout=compact&theme=radical&hide_border=true&langs_count=8&exclude_repo=github-readme-stats,hydra07.github.io&cache_seconds=1800" alt="Top Languages" />
+          </div>
+
+          ## 📊 GitHub Stats
+
+          <div align="center">
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=hydra07&theme=radical&hide_border=true&cache_seconds=1800" alt="GitHub Streak" />
+            <img src="https://github-readme-stats.vercel.app/api?username=hydra07&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&exclude_repo=github-readme-stats,hydra07.github.io&cache_seconds=1800" alt="GitHub Stats" />
+          </div>
+
+          ## 📈 Contribution Graph
+
+          <div align="center">
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=hydra07&theme=radical&hide_border=true&custom_title=Contribution%20Graph&cache_seconds=1800" alt="Contribution Graph" />
+          </div>
+
+          <!-- Snake animation -->
+          <div align="center">
+            <img src="https://github.com/hydra07/hydra07/blob/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
+          </div>
+
+          ---
+          <div align="center">
+            <img src="https://komarev.com/ghpvc/?username=hydra07&style=flat-square&color=blue" alt="Profile Views" />
+            ⭐️ From [hydra07](https://github.com/hydra07)
+          </div>
+          EOL
+
+          # Cập nhật README.md
+          mv temp.md README.md
+          
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update stats" && git push) 
