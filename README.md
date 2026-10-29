@@ -1,39 +1,22 @@
-# Hi there 👋 I'm Huy
+### `$ cat ~/.config/hydra07.yaml`
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=FF0000&center=true&vCenter=true&width=600&height=100&lines=Frontend+Developer;Backend+Developer;Full+Stack+Enthusiast" alt="Typing SVG" />
-</div>
+```yaml
+user: hydra07 (Huy)
+role: software engineer
+location: vietnam [utc+7]
 
-## 🚀 About Me
+focus:
+  - web applications & developer tooling
+  - systems exploration & clean architecture
+  - terminal-centric workflows
 
-- 🔭 Full-stack developer with a passion for creating efficient and scalable solutions
-- 🎯 Focused on building robust web applications and APIs
+stack:
+  languages: [typescript, javascript, python, lua, go, rust]
+  technologies: [nextjs, react, bun]
+  environment: [linux, nvim, docker, git]
 
-## 🛠️ Tech Stack
+dotfiles: github.com/hydra07/dotfiles
+philosophy: "keep it simple, fast, and self-contained"
 
-### Languages & Frameworks
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hydra07&layout=compact&theme=radical&hide_border=true&langs_count=8&exclude_repo=github-readme-stats,hydra07.github.io" alt="Top Languages" />
-</div>
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=hydra07&theme=radical&hide_border=true" alt="GitHub Streak" />
-  <img src="https://github-readme-stats.vercel.app/api?username=hydra07&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&exclude_repo=github-readme-stats,hydra07.github.io" alt="GitHub Stats" />
-</div>
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=hydra07&theme=radical&hide_border=true&custom_title=Contribution%20Graph" alt="Contribution Graph" />
-</div>
-
-<!-- Snake animation -->
-
----
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=hydra07&style=flat-square&color=blue" alt="Profile Views" />
-  ⭐️ From [hydra07](https://github.com/hydra07)
-</div>
+contact: huynk1210@gmail.com
+```
